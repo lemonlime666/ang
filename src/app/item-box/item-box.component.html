@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let item of itemList; let i = index; let oddItem = odd"
+        [ngClass]="{ 'odd':oddItem }" 
+        (click)="deleteItem(item)"
+    >{{ item }}
+    </li>
+
+    <li *ngFor="let doneItem of doneList; let i = index; let oddItem = odd"
+        [ngClass]="{ 'odd':oddItem }"
+    >{{ doneItem }}
+    </li>
+</ul>

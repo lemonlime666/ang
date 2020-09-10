@@ -1,0 +1,28 @@
+.app-title{
+    width: max-content;
+    margin:20px auto;
+    color:maroon;
+}
+
+.status{
+    // border: 1px solid red;
+    width: max-content;
+    margin: 20px auto 0;
+
+    a{
+        margin-right: 20px;
+        text-decoration:none;
+        color: grey;
+        &:last-child{
+            margin:0;
+        }
+    }
+
+    .active{
+        color:orangered;
+    }
+}
+
+.done{
+    text-decoration: line-through;
+}

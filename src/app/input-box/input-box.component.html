@@ -1,0 +1,11 @@
+<label for="add_form">
+    <input 
+        type="text"
+        id="add_form" 
+        name="add_form" 
+        [placeholder]="textHolder" 
+        [(ngModel)]="todoTxt"
+        (keyup.enter)="addToDo()"
+    />
+    <button (click)="addToDo()">add</button>
+</label>

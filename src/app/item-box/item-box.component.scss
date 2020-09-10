@@ -1,0 +1,26 @@
+ul{
+    border:2px double grey;
+    border-radius: 5px;
+    width: 600px;
+    margin:10px auto 0;
+    height: 70vh;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    li{
+        border-bottom:1px solid grey;
+        height: 40px;
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left:5px;
+        cursor: pointer;
+    }
+
+    .odd{
+        background-color:rgba(grey, .3);
+    }
+}

@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { componentFactoryName } from '@angular/compiler';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -21,11 +22,24 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('todo');
   });
-
-  it('should render title', () => {
+  
+  it('getToDo, should push data in the todoList', ()=>{
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('todo app is running!');
-  });
+    const app = fixture.componentInstance;
+    
+    app.getToDo('item');
+    expect(app.todoList.length).toBe(1);
+  })
+
+  it('deleteFromList, should delete from todolist && push into donList', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+
+    let proxy = 'item'
+    app.todoList = [proxy];
+    app.doneList = [];
+    app.deleteFromList(proxy);
+    expect(app.todoList.length).toBe(0);
+    expect(app.doneList.length).toBe(1);
+  })
 });
